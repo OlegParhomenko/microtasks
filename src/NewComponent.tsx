@@ -30,10 +30,10 @@ export const NewComponent = (props: CarComponentType) => {
 
     return (
         <table>
-            {props.topCars.map((Car, index) => (
+            {props.topCars.map((CarFromTopCars, index) => (
                 <tr key={index}>
-                    <th>{Car.manufacturer}</th>
-                    <th>{Car.model}</th>
+                    <th>{CarFromTopCars.manufacturer}</th>
+                    <th>{CarFromTopCars.model}</th>
                 </tr>
             ))}
         </table>)
