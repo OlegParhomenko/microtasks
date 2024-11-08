@@ -1,40 +1,49 @@
 import React, {useState} from 'react';
-import {NewComponent} from "./NewComponent";
+import {Button} from "./components/Button";
+
+// import {NewComponent, topCars} from "./NewComponent";
 
 function App() {
+//    const myFristSubscriber = (event: React.MouseEvent<HTMLButtonElement>) =>{
+//        console.log("hello! I am Vasya")
+//    }
+//
+//    const mySecondSubcriber = (event: React.MouseEvent<HTMLButtonElement>) => {
+//        console.log('hello! I am Ivan')
+//    }
 
+const onClickHandler= (name: string) => {
+    console.log(name)
+}
 
+const Button1Foo = (subscriber: string, age: number) =>{
+    console.log(subscriber, age)
+}
 
+    const Button2Foo = (subscriber: string) =>{
+        console.log(subscriber)
+    }
 
-    // let [students, setStudents] = useState([
-    //         {id: 1, name: "James", age: 8},
-    //         {id: 2, name: "Robert", age: 18},
-    //         {id: 3, name: "John", age: 28},
-    //         {id: 4, name: "Michael", age: 38},
-    //         {id: 5, name: "William", age: 48},
-    //         {id: 6, name: "David", age: 58},
-    //         {id: 7, name: "Richard", age: 68},
-    //         {id: 8, name: "Joseph", age: 78},
-    //         {id: 9, name: "Thomas", age: 88},
-    //         {id: 10, name: "Charles", age: 98},
-    //         {id: 11, name: "Christopher", age: 100},
-    //     ]
-    // )
-
-    let topCars = [
-        {manufacturer: 'BMW', model:'m5cs'},
-        {manufacturer:'Mercedes', model:'e63s'},
-        {manufacturer:'Audi', model:'rs6'}
-    ]
-
+    const Button3Foo = () =>{
+        console.log("TROLOLOL")
+    }
 
     return (
-        <NewComponent topCars={topCars}/>
+        <div>
+            {/*<button onClick={(event) => {console.log("hello!")}}>MyYoutubeChannelButton1</button>*/}
+            <Button title={'MyYoutubeChannelButton-1'} callback={() => Button1Foo ('HERO', 21)}/>
+            <Button title={'MyYoutubeChannelButton-2'} callback={() => Button2Foo ("U NOT HERO")}/>
+            <Button title={'Stupid BUTTON'} callback={() => Button3Foo()}/>
+            {/*<button>MyYoutubeChannelButton-1</button>*/}
+            {/*<button onClick={(event: React.MouseEvent<HTMLButtonElement>) => onClickHandler ('Ivan')}>MyYoutubeChannelButton-2</button>*/}
+
+        </div>
+        // <NewComponent topCars={topCars}/>
+
     );
 }
 
 export default App;
-
 
 
 // export const NewComponent = (props: NewComponentType) => {
